@@ -12,12 +12,20 @@ public class Animal
 {
    int foo;
    String bar;
+
+   Animal()
+   {
+      this.foo = 123123;
+      this.bar = "asdasdasd";
+   }
 }
 
 public class Dog extends Animal implements Animal2{
    String breed;
    int age;
    String color;
+   private float ddddd;
+   private static String finderaaaa;
 
    int barking(int a,int b) {
    }

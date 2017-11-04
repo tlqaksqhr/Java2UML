@@ -40,20 +40,29 @@ class ClassListener(JavaListener):
 		FieldContainer = []
 
 		for classBodyDeclaration in classBodyDeclarations:
+
+			modifier = ""
+			for mod in classBodyDeclaration.modifier():
+				modifier = modifier + " " + self.getAllText(mod)
 			if(type(classBodyDeclaration.memberDeclaration().methodDeclaration()) != type(None)):
-				MethodContainer.append(classBodyDeclaration.memberDeclaration().methodDeclaration())
+				MethodContainer.append({"modifier" : modifier,"value" : classBodyDeclaration.memberDeclaration().methodDeclaration()})
+			elif(type(classBodyDeclaration.memberDeclaration().constructorDeclaration()) != type(None)):
+				MethodContainer.append({"modifier" : modifier,"value" : classBodyDeclaration.memberDeclaration().constructorDeclaration()})
 			elif(type(classBodyDeclaration.memberDeclaration().fieldDeclaration()) != type(None)):
-				FieldContainer.append(classBodyDeclaration.memberDeclaration().fieldDeclaration())
+				FieldContainer.append({"modifier" : modifier,"value" : classBodyDeclaration.memberDeclaration().fieldDeclaration()})
 
 		for Method in MethodContainer:
 			methodListener = MethodListener()
-			Method.enterRule(methodListener)
+			Method["value"].enterRule(methodListener)
+			methodListener.Method["modifier"] = Method["modifier"]
 			Cnode.MethodList.append(methodListener.Method)
 			#print(methodListener.Method)
 
 		for Field in FieldContainer:
 			fieldListener = FieldListener()
-			Field.enterRule(fieldListener)
+			Field["value"].enterRule(fieldListener)
+			for i in range(0,len(fieldListener.FieldList)):
+				fieldListener.FieldList[i].update({"modifier" : Field["modifier"]})
 			Cnode.FieldList += fieldListener.FieldList
 			#print(methodListener.Method)			
 

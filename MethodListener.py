@@ -89,7 +89,6 @@ class MethodListener(JavaListener):
 		self.Method["MethodName"] = self.Name
 		self.Method["ReturnType"] = self.ReturnType
 		self.Method["ArgumentList"] = self.ArgList
-		pass
 
 	# Exit a parse tree produced by JavaParser#interfaceMethodDeclaration.
 	def exitInterfaceMethodDeclaration(self, ctx:JavaParser.InterfaceMethodDeclarationContext):
