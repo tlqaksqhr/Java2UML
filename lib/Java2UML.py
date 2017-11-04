@@ -1,10 +1,10 @@
 import sys
 from antlr4 import *
-from JavaLexer import JavaLexer
-from JavaParser import JavaParser
-from JavaListener import JavaListener
-from CompilationUnitListener import CompilationUnitListener
-from UMLGraph import UMLGraph
+from .JavaLexer import JavaLexer
+from .JavaParser import JavaParser
+from .JavaListener import JavaListener
+from .CompilationUnitListener import CompilationUnitListener
+from .UMLGraph import UMLGraph
 
 class Java2UML():
 

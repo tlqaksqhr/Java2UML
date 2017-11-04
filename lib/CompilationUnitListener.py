@@ -1,9 +1,9 @@
 from antlr4 import *
-from JavaLexer import JavaLexer
-from JavaParser import JavaParser
-from JavaListener import JavaListener
-from ClassListener import ClassListener
-from InterfaceListener import InterfaceListener
+from .JavaLexer import JavaLexer
+from .JavaParser import JavaParser
+from .JavaListener import JavaListener
+from .ClassListener import ClassListener
+from .InterfaceListener import InterfaceListener
 
 class CompilationUnitListener(JavaListener):
 
@@ -14,7 +14,6 @@ class CompilationUnitListener(JavaListener):
 
 	# Enter a parse tree produced by JavaParser#compilationUnit.
 	def enterCompilationUnit(self, ctx:JavaParser.CompilationUnitContext):
-
 
 		if type(ctx.packageDeclaration()) != type(None):
 			PackageName = self.getAllText(ctx.packageDeclaration().qualifiedName())

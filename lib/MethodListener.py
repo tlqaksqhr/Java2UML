@@ -1,8 +1,8 @@
 from antlr4 import *
-from JavaLexer import JavaLexer
-from JavaParser import JavaParser
-from JavaListener import JavaListener
-from FormalParameterListener import FormalParameterListener
+from .JavaLexer import JavaLexer
+from .JavaParser import JavaParser
+from .JavaListener import JavaListener
+from .FormalParameterListener import FormalParameterListener
 
 class MethodListener(JavaListener):
 

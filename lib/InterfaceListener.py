@@ -1,10 +1,10 @@
 from antlr4 import *
-from JavaLexer import JavaLexer
-from JavaParser import JavaParser
-from JavaListener import JavaListener
-from MethodListener import MethodListener
-from FieldListener import FieldListener
-from InterfaceNode import InterfaceNode
+from .JavaLexer import JavaLexer
+from .JavaParser import JavaParser
+from .JavaListener import JavaListener
+from .MethodListener import MethodListener
+from .FieldListener import FieldListener
+from .InterfaceNode import InterfaceNode
 
 class InterfaceListener(JavaListener):
 

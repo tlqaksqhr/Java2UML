@@ -1,7 +1,7 @@
 from antlr4 import *
-from JavaLexer import JavaLexer
-from JavaParser import JavaParser
-from JavaListener import JavaListener
+from .JavaLexer import JavaLexer
+from .JavaParser import JavaParser
+from .JavaListener import JavaListener
 
 class FormalParameterListener(JavaListener):
 

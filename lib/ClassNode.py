@@ -1,6 +1,6 @@
 from antlr4 import *
-from JavaLexer import JavaLexer
-from JavaParser import JavaParser
+from .JavaLexer import JavaLexer
+from .JavaParser import JavaParser
 
 class ClassNode():
 

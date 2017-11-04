@@ -1,6 +1,6 @@
 from graphviz import Digraph
-from ClassNode import ClassNode
-from InterfaceNode import InterfaceNode
+from .ClassNode import ClassNode
+from .InterfaceNode import InterfaceNode
 
 class UMLGraph():
 
