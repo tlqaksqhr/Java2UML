@@ -1,0 +1,11 @@
+digraph UMLGraph {
+	node [fontname="Bitstream Vera Sans"]
+	node [shape=record]
+	node [fontsize=9]
+	node [height=1]
+	node [width=2]
+	edge [fontname="Bitstream Vera Sans"]
+	edge [fontsize=9]
+	Dog [label="{Dog|+ breed : String\l+ age : int\l+ color : String\l|+ barking(int : a, int : b) : int\l+ hungry(void) : void\l+ sleeping(void) : void\l}"]
+	HelloWorld [label="{HelloWorld||+ main(String[] : args) : void\l}"]
+}
