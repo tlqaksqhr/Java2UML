@@ -1,4 +1,4 @@
-package com.test.a;
+//package com.test.a;
 
 interface Animal2
 {
