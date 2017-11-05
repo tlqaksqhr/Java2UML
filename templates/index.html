@@ -1,30 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+	<meta charset="utf-8">
+	<title>Java2UML</title>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-	    <!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-	<link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
-    <title>Java2UML</title>
-
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/main.css') }}">
 </head>
 <body>
-    <div><h1>Java2UML(Index Page)</h1></div>
+
+<div id="app">
+	<div id="header">
+		<b>Java2UML</b> &mdash; <a href="https://github.com/tlqaksqhr/Java2UML">GitHub repository</a>.
+	</div>
+<div id="panes" class="split split-horizontal">
+	<div id="editbox" class="split">
+		<div id="editor" class="split">
+		</div>
+		<div id="result" class="split">
+			<a id="execute" href="#" class="button">make</a>
+		</div>
+	</div>
+	<div id="graph" class="split">
+	<div id="options">
+		<label id="engine">
+		Engine:
+		<select>
+			<option>circo</option>
+			<option selected>dot</option>
+			<option>fdp</option>
+			<option>neato</option>
+			<option>osage</option>
+			<option>twopi</option>
+		</select>
+		</label>
+		
+		<label id="format">
+		Format:
+		<select>
+			<option selected>svg</option>
+			<option>png-image-element</option>
+			<option>json</option>
+			<option>xdot</option>
+			<option>plain</option>
+			<option>ps</option>
+		</select>
+		</label>
+		
+		<label id="raw">
+		<input type="checkbox"> Show raw output
+		</label>
+	</div>
+	<div id="output">
+		<div id="error"></div>
+	</div>
+	</div>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.9/ace.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.9/theme-monokai.js"></script>
+<script src="{{ url_for('static', filename = 'js/viz.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/fabric.min.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/split.min.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/svg-pan-zoom.min.js') }}"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<script>
+
+var beforeUnloadMessage = null;
+
+var resizeEvent = new Event("paneresize");
+Split(['#editbox', '#graph'], {
+	sizes: [25, 75],
+	onDragEnd: function() { 
+		var svgOutput = document.getElementById("svg_output");
+		if (svgOutput != null) {
+		svgOutput.dispatchEvent(resizeEvent);
+		}
+	}
+});
+
+Split(['#editor', '#result'], {
+	sizes: [90, 10],
+	direction: 'vertical'
+});
+
+
+var editor = ace.edit("editor");
+editor.setTheme("ace/theme/monokai");
+editor.getSession().setMode("ace/mode/java");
+
+
+$("#execute").click(function(){
+	var text = editor.getValue();
+	alert(text);
+});
+
+</script>
+
 </body>
 </html>
