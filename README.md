@@ -1,7 +1,11 @@
 # Java2UML
-Java Code 2 UML Diagram
 
+<h2>Java Code 2 UML Diagram</h2>
 
-Dependency : 
-    ANTLR4 for python
-    graphviz
+<h2>Dependency : </h2>
+
+<ul>
+    <li>ANTLR4 for python</li>
+    <li>graphviz</li>
+    <li>flask</li>
+</ul>
