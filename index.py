@@ -17,8 +17,9 @@ def java2uml():
 		code = request.args.get('code')
 
 	result = MainClass.JavaCode2UML(code)
+	result.replace("\n","\r\n")
 	
-	return escape(result)
+	return result
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0',port=30000)

@@ -37,8 +37,8 @@
 		<label id="format">
 		Format:
 		<select>
-			<option selected>svg</option>
-			<option>png-image-element</option>
+			<option>svg</option>
+			<option selected>png-image-element</option>
 			<option>json</option>
 			<option>xdot</option>
 			<option>plain</option>
@@ -95,8 +95,13 @@ editor.getSession().setMode("ace/mode/java");
 
 
 $("#execute").click(function(){
-	var text = editor.getValue();
-	alert(text);
+	var graph = document.querySelector("#output");
+	var code = editor.getValue();
+
+	$.post("/java2uml", {"code": code}, function(result){
+		image = Viz(result, { format: "png-image-element" });
+		graph.appendChild(image);
+	});
 });
 
 </script>
