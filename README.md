@@ -10,10 +10,9 @@
     <li>flask</li>
 </ul>
 
+<h2>Demo Site</h2>
+http://semtax.iptime.org:30000
+
 <h2>Demo Screenshot : </h2>
 
 ![screensh](./result.gif)
-
-
-<h2>Demo Site</h2>
-http://semtax.iptime.org:30000
