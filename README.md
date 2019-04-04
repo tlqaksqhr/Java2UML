@@ -1,17 +1,43 @@
 # Java2UML
+```
+Java Code -> UML Diagram Converter
+```
 
-<h2>Java Code 2 UML Diagram</h2>
+------
 
-<h2>Dependency : </h2>
+## Installation
 
-<ul>
-    <li>ANTLR4 for python</li>
-    <li>graphviz</li>
-    <li>flask</li>
-</ul>
+### 1. Install library
 
-<h2>Demo Site</h2>
+Install below library using pip3
 
-<h2>Demo Screenshot : </h2>
+```bash
+pip install antlr4-python3-runtime
+pip install flask
+pip install graphviz
+```
+
+
+### 2. Clone "Java2UML"
+
+clone like below script
+
+```bash
+git clone https://github.com/tlqaksqhr/Java2UML
+```
+
+------
+
+# Usage
+
+```bash
+python index.py
+```
+Then, enter http://localhost:30000.
+That's all. just do it like below image!
+
+------
+
+# Demo
 
 ![screensh](./result.gif)
