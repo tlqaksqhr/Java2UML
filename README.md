@@ -4,7 +4,7 @@
 
 ------
 
-## Installation
+# Installation
 
 ### 1. Install library
 
