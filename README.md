@@ -1,7 +1,6 @@
 # Java2UML
-```
-Java Code -> UML Diagram Converter
-```
+
+## Java Code -> UML Diagram Converter
 
 ------
 
