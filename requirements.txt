@@ -3,3 +3,4 @@ Flask==1.0.2
 Jinja2==2.10
 graphviz==0.10.1
 Werkzeug==0.15.2
+gunicorn==19.9.0
