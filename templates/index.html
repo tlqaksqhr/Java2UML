@@ -101,14 +101,16 @@ $("#execute").click(function(){
 
 	$.post("/java2uml", {"code": code}, function(result){
 		image = Viz(result, { format: "png-image-element" });
-		graph.removeChild(graph.firstChild);
+		let target_node = document.querySelector('img');
+		graph.removeChild(target_node);
 		graph.appendChild(image);
 	});
 });
 
 $("#clean").click(function(){
 	var graph = document.querySelector("#output");
-	graph.removeChild(graph.firstChild);
+	let target_node = document.querySelector('img');
+	graph.removeChild(target_node);
 });
 
 </script>
