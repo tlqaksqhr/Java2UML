@@ -102,7 +102,9 @@ $("#execute").click(function(){
 	$.post("/java2uml", {"code": code}, function(result){
 		image = Viz(result, { format: "png-image-element" });
 		let target_node = document.querySelector('img');
-		graph.removeChild(target_node);
+		if(target_node != null){
+			graph.removeChild(target_node);
+		}
 		graph.appendChild(image);
 	});
 });
