@@ -18,6 +18,7 @@
 		</div>
 		<div id="result" class="split">
 			<a id="execute" href="#" class="button">make</a>
+			<a id="clean" href="#" class="button">clean</a>
 		</div>
 	</div>
 	<div id="graph" class="split">
@@ -98,10 +99,17 @@ $("#execute").click(function(){
 	var graph = document.querySelector("#output");
 	var code = editor.getValue();
 
+	graph.removeChild(graph.firstChild);
+
 	$.post("/java2uml", {"code": code}, function(result){
 		image = Viz(result, { format: "png-image-element" });
 		graph.appendChild(image);
 	});
+});
+
+$("#clean").click(function(){
+	var graph = document.querySelector("#output");
+	graph.removeChild(graph.firstChild);
 });
 
 </script>
