@@ -99,10 +99,9 @@ $("#execute").click(function(){
 	var graph = document.querySelector("#output");
 	var code = editor.getValue();
 
-	graph.removeChild(graph.firstChild);
-
 	$.post("/java2uml", {"code": code}, function(result){
 		image = Viz(result, { format: "png-image-element" });
+		graph.removeChild(graph.firstChild);
 		graph.appendChild(image);
 	});
 });
