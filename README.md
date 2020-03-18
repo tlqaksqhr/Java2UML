@@ -1,6 +1,6 @@
 # Java2UML
 
-Java Code -> UML Diagram Converter
+Java Code -> UML Diagram Compiler
 
 ------
 
@@ -30,7 +30,9 @@ git clone https://github.com/tlqaksqhr/Java2UML
 # Usage
 
 ```bash
+
 python index.py
+
 ```
 Then, enter http://localhost:30000.
 That's all. just do it like below image!
