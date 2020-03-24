@@ -17,9 +17,9 @@ pip install graphviz
 ```
 
 
-### 2. Clone "Java2UML"
+### 2. Clone Java2UML
 
-clone project below script
+Clone Java2UML project like below
 
 ```bash
 git clone https://github.com/tlqaksqhr/Java2UML
